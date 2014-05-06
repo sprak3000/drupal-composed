@@ -1,0 +1,55 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/sprak3000/drupal"
+        },
+        {
+            "type": "composer",
+            "url": "http://drugist.espend.de"
+        },
+        {
+            "type": "composer",
+            "packagist": "false",
+            "url": "https://raw.githubusercontent.com/sprak3000/drupal-composed/master/packages.json"
+        }
+    ],
+    "require": {
+        "sprak3000/drupal": "7.23.x-dev",
+        "drupal/date": "7.2.7",
+        "drupal/token": "7.1.5",
+        "drupal/views": "7.3.7",
+        "sprak3000-drupal/ctools": "7.1.4",
+        "sprak3000-drupal/devel": "7.1.5",
+        "sprak3000-drupal/entity": "7.1.5",
+        "sprak3000-drupal/entityreference": "7.1.1",
+        "sprak3000-drupal/entity_view_mode": "7.1.0-rc1",
+        "sprak3000-drupal/find_content": "7.1.2",
+        "sprak3000-drupal/globalredirect": "7.1.5",
+        "sprak3000-drupal/i18n": "7.1.11",
+        "sprak3000-drupal/i18nviews": "7.3-dev",
+        "sprak3000-drupal/libraries": "7.2.2",
+        "sprak3000-drupal/link": "7.1.2",
+        "sprak3000-drupal/media": "7.1.4",
+        "sprak3000-drupal/media_twitch": "7.1.0-dev",
+        "sprak3000-drupal/media_youtube": "7.1.0-beta3",
+        "sprak3000-drupal/metatag": "7.1.0-beta9",
+        "sprak3000-drupal/module_filter": "7.2.0-alpha2",
+        "sprak3000-drupal/pathauto": "7.1.2",
+        "sprak3000-drupal/redirect": "7.1.0-rc1",
+        "sprak3000-drupal/scheduler": "7.1.2",
+        "sprak3000-drupal/strongarm": "7.2.0",
+        "sprak3000-drupal/uuid": "7.1.0-alpha5",
+        "sprak3000-drupal/variable": "7.2.5",
+        "sprak3000-drupal/views_infinite_scroll": "7.1.1",
+        "sprak3000-drupal/xmlsitemap": "7.2.0",
+        "sprak3000-drupal/rubiktheme": "7.4.0",
+        "sprak3000-drupal/taotheme": "7.3.1"
+    },
+    "extra": {
+        "installer-paths": {
+            "public/sites/all/modules/{$name}/": ["type:drupal-module"],
+            "public/sites/all/themes/{$name}/": ["type:drupal-theme"]
+        }
+    }
+}
