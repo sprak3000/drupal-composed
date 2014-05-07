@@ -408,6 +408,23 @@
                 "type": "drupal-module"
             }
         },
+        "sprak3000-drupal/filefield_paths": {
+            "7.1.0-beta4": {
+                "name": "sprak3000-drupal/filefield_paths",
+                "version": "7.1.0-beta4",
+                "version_normalized": "7.1.0.0-beta4",
+                "dist": {
+                    "type": "tar",
+                    "url": "http://ftp.drupal.org/files/projects/filefield_paths-7.x-1.0-beta4.tar.gz",
+                    "reference": "1aca88c5b1b995f61867f9c3c5412b79",
+                    "shasum": null
+                },
+                "require": {
+                    "composer/installers": "*"
+                },
+                "type": "drupal-module"
+            }
+        },
         "sprak3000-drupal/rubiktheme": {
             "7.4.0": {
                 "name": "sprak3000-drupal/rubiktheme",

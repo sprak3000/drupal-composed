@@ -24,6 +24,7 @@
         "sprak3000-drupal/entity": "7.1.5",
         "sprak3000-drupal/entityreference": "7.1.1",
         "sprak3000-drupal/entity_view_mode": "7.1.0-rc1",
+        "sprak3000-drupal/filefield_paths": "7.1.0-beta4",
         "sprak3000-drupal/find_content": "7.1.2",
         "sprak3000-drupal/globalredirect": "7.1.5",
         "sprak3000-drupal/i18n": "7.1.11",
@@ -51,5 +52,16 @@
             "public/sites/all/modules/{$name}/": ["type:drupal-module"],
             "public/sites/all/themes/{$name}/": ["type:drupal-theme"]
         }
+    },
+    "scripts" : {
+      "post-install-cmd" : [
+        "echo 'Starting Drupal installation. This takes a few seconds ...'",
+        "drush --yes --root=$DRUPAL_ROOT site-install porkins --db-url=$DB_URL_DRUPAL 2>&1 | grep 'Installation complete'",
+        "drush --yes --root=$DRUPAL_ROOT pm-enable rubik",
+        "drush --yes --root=$DRUPAL_ROOT vset admin_theme rubik",
+        "drush --yes --root=$DRUPAL_ROOT pm-disable overlay"
+      ],
+      "post-update-cmd" : [
+      ]
     }
 }
