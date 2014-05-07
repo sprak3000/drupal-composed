@@ -7,7 +7,7 @@ released and allowed to mature.
 
 Enter "Drupal Composed", my effort to create a Composer project that will install Drupal 7 with one easy command. Bundled
 with this is my [Linguo](http://simpsons.wikia.com/wiki/Linguo) installation profile. This will install the standard Drupal
-components, enable French and German translations, and enable the set of modules I have found useful for building robust
+components, enable French and German translations, use a [Bootstrap](http://getbootstrap.com/) theme, and enable the set of modules I have found useful for building robust
 multi-lingual sites.
 
 ## Requirements

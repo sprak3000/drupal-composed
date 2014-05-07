@@ -61,7 +61,13 @@
           "drush --yes --root=$DRUPAL_ROOT site-install linguo --db-url=$DB_URL_DRUPAL 2>&1 | grep 'Installation complete'",
           "drush --yes --root=$DRUPAL_ROOT pm-enable rubik",
           "drush --yes --root=$DRUPAL_ROOT variable-set admin_theme rubik",
-          "drush --yes --root=$DRUPAL_ROOT pm-disable overlay"
+          "drush --yes --root=$DRUPAL_ROOT pm-enable bootstrap",
+          "drush --yes --root=$DRUPAL_ROOT variable-set theme_default bootstrap",
+          "drush --yes --root=$DRUPAL_ROOT pm-disable overlay",
+          "drush --yes --root=$DRUPAL_ROOT language-add fr",
+          "drush --yes --root=$DRUPAL_ROOT language-enable fr",
+          "drush --yes --root=$DRUPAL_ROOT language-add de",
+          "drush --yes --root=$DRUPAL_ROOT language-enable de"
       ],
       "post-update-cmd" : [
           "drush --yes --root=$DRUPAL_ROOT updatedb",

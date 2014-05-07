@@ -42,6 +42,7 @@ dependencies[] = i18n_taxonomy
 dependencies[] = i18n_translation
 dependencies[] = i18n_variable
 dependencies[] = i18nviews
+dependencies[] = jquery_update
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = media
