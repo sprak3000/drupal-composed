@@ -24,10 +24,12 @@
         "sprak3000-drupal/entity": "7.1.5",
         "sprak3000-drupal/entityreference": "7.1.1",
         "sprak3000-drupal/entity_view_mode": "7.1.0-rc1",
+        "sprak3000-drupal/filefield_paths": "7.1.0-beta4",
         "sprak3000-drupal/find_content": "7.1.2",
         "sprak3000-drupal/globalredirect": "7.1.5",
         "sprak3000-drupal/i18n": "7.1.11",
         "sprak3000-drupal/i18nviews": "7.3-dev",
+        "sprak3000-drupal/jquery_update": "7.2.4",
         "sprak3000-drupal/libraries": "7.2.2",
         "sprak3000-drupal/link": "7.1.2",
         "sprak3000-drupal/media": "7.1.4",
@@ -44,12 +46,38 @@
         "sprak3000-drupal/views_infinite_scroll": "7.1.1",
         "sprak3000-drupal/xmlsitemap": "7.2.0",
         "sprak3000-drupal/rubiktheme": "7.4.0",
-        "sprak3000-drupal/taotheme": "7.3.1"
+        "sprak3000-drupal/taotheme": "7.3.1",
+        "sprak3000-drupal/bootstraptheme": "7.3.0"
     },
     "extra": {
         "installer-paths": {
             "public/sites/all/modules/{$name}/": ["type:drupal-module"],
             "public/sites/all/themes/{$name}/": ["type:drupal-theme"]
         }
+    },
+    "scripts" : {
+      "post-install-cmd" : [
+          "echo 'Starting Drupal installation. This takes a few seconds ...'; drush --yes --root=$DRUPAL_ROOT site-install linguo --db-url=$DB_URL_DRUPAL 2>&1 | grep 'Installation complete'",
+          "echo 'Setting admin theme ...'; drush --yes --pipe --root=$DRUPAL_ROOT pm-enable rubik",
+          "drush --yes --pipe --root=$DRUPAL_ROOT variable-set admin_theme rubik",
+          "drush --yes --pipe --root=$DRUPAL_ROOT pm-disable overlay",
+          "echo 'Setting site theme ...'; drush --yes --pipe --root=$DRUPAL_ROOT pm-enable bootstrap",
+          "drush --yes --pipe --root=$DRUPAL_ROOT variable-set theme_default bootstrap",
+          "drush --yes --pipe --root=$DRUPAL_ROOT --format='string' variable-set jquery_update_jquery_version '1.10'",
+          "echo 'Enabling French language translation ...'; drush --yes --pipe --root=$DRUPAL_ROOT language-add fr",
+          "echo 'Enabling German language translation ...'; drush --yes --pipe --root=$DRUPAL_ROOT language-add de",
+          "echo 'Setting URLs to use language prefix ...'; drush --yes --pipe --root=$DRUPAL_ROOT --format='json' variable-set language_negotiation_language '{\"locale-url\":{\"callbacks\":{\"language\":\"locale_language_from_url\",\"switcher\":\"locale_language_switcher_url\",\"url_rewrite\":\"locale_language_url_rewrite_url\"},\"file\":\"includes\/locale.inc\"},\"locale-browser\":{\"callbacks\":{\"language\":\"locale_language_from_browser\"},\"file\":\"includes\/locale.inc\",\"cache\":0},\"language-default\":{\"callbacks\":{\"language\":\"language_from_default\"}}}'",
+          "drush --yes --pipe --root=$DRUPAL_ROOT --format='string' variable-set locale_language_negotiation_url_part '0'",
+          "drush --yes --pipe --root=$DRUPAL_ROOT variable-set i18n_hide_translation_links 1",
+          "drush --yes --pipe --root=$DRUPAL_ROOT sql-query \"UPDATE languages SET prefix = 'en' WHERE language = 'en';\"",
+          "echo 'Enabling translations for Article content type ...'; drush --yes --pipe --root=$DRUPAL_ROOT --format='string' variable-set language_content_type_article '2'",
+          "echo 'Enabling translations for Basic Page content type ...'; drush --yes --pipe --root=$DRUPAL_ROOT --format='string' variable-set language_content_type_page '2'",
+          "echo 'Setting timezone to America/New_York ...'; drush --yes --pipe --root=$DRUPAL_ROOT variable-set date_default_timezone 'America/New_York'",
+          "echo 'Setting file upload directory permissions ...'; chmod -R ug+w public/sites/default/files"
+      ],
+      "post-update-cmd" : [
+          "drush --yes --root=$DRUPAL_ROOT updatedb",
+          "drush --yes --root=$DRUPAL_ROOT cache-clear all"
+      ]
     }
 }
