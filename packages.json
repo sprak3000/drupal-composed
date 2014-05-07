@@ -425,6 +425,23 @@
                 "type": "drupal-module"
             }
         },
+        "sprak3000-drupal/jquery_update": {
+            "7.2.4": {
+                "name": "sprak3000-drupal/jquery_update",
+                "version": "7.2.4",
+                "version_normalized": "7.2.4",
+                "dist": {
+                    "type": "tar",
+                    "url": "http://ftp.drupal.org/files/projects/jquery_update-7.x-2.4.tar.gz",
+                    "reference": "9cc4f8b964202f1d6f005a43a08060c6",
+                    "shasum": null
+                },
+                "require": {
+                    "composer/installers": "*"
+                },
+                "type": "drupal-module"
+            }
+        },
         "sprak3000-drupal/rubiktheme": {
             "7.4.0": {
                 "name": "sprak3000-drupal/rubiktheme",
@@ -451,6 +468,23 @@
                     "type": "tar",
                     "url": "http://ftp.drupal.org/files/projects/tao-7.x-3.1.tar.gz",
                     "reference": "776bc17fffacae6caa06b5909cdd4178",
+                    "shasum": null
+                },
+                "require": {
+                    "composer/installers": "*"
+                },
+                "type": "drupal-theme"
+            }
+        },
+        "sprak3000-drupal/bootstraptheme": {
+            "7.3.0": {
+                "name": "sprak3000-drupal/bootstraptheme",
+                "version": "7.3.0",
+                "version_normalized": "7.3.0.0",
+                "dist": {
+                    "type": "tar",
+                    "url": "http://ftp.drupal.org/files/projects/bootstrap-7.x-3.0.tar.gz",
+                    "reference": "633ba721e7d0f52627bc665d27cea002",
                     "shasum": null
                 },
                 "require": {

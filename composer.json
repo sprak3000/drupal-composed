@@ -29,6 +29,7 @@
         "sprak3000-drupal/globalredirect": "7.1.5",
         "sprak3000-drupal/i18n": "7.1.11",
         "sprak3000-drupal/i18nviews": "7.3-dev",
+        "sprak3000-drupal/jquery_update": "7.2.4",
         "sprak3000-drupal/libraries": "7.2.2",
         "sprak3000-drupal/link": "7.1.2",
         "sprak3000-drupal/media": "7.1.4",
@@ -45,7 +46,8 @@
         "sprak3000-drupal/views_infinite_scroll": "7.1.1",
         "sprak3000-drupal/xmlsitemap": "7.2.0",
         "sprak3000-drupal/rubiktheme": "7.4.0",
-        "sprak3000-drupal/taotheme": "7.3.1"
+        "sprak3000-drupal/taotheme": "7.3.1",
+        "sprak3000-drupal/bootstraptheme": "7.3.0"
     },
     "extra": {
         "installer-paths": {
@@ -55,13 +57,15 @@
     },
     "scripts" : {
       "post-install-cmd" : [
-        "echo 'Starting Drupal installation. This takes a few seconds ...'",
-        "drush --yes --root=$DRUPAL_ROOT site-install linguo --db-url=$DB_URL_DRUPAL 2>&1 | grep 'Installation complete'",
-        "drush --yes --root=$DRUPAL_ROOT pm-enable rubik",
-        "drush --yes --root=$DRUPAL_ROOT vset admin_theme rubik",
-        "drush --yes --root=$DRUPAL_ROOT pm-disable overlay"
+          "echo 'Starting Drupal installation. This takes a few seconds ...'",
+          "drush --yes --root=$DRUPAL_ROOT site-install linguo --db-url=$DB_URL_DRUPAL 2>&1 | grep 'Installation complete'",
+          "drush --yes --root=$DRUPAL_ROOT pm-enable rubik",
+          "drush --yes --root=$DRUPAL_ROOT variable-set admin_theme rubik",
+          "drush --yes --root=$DRUPAL_ROOT pm-disable overlay"
       ],
       "post-update-cmd" : [
+          "drush --yes --root=$DRUPAL_ROOT updatedb",
+          "drush --yes --root=$DRUPAL_ROOT cache-clear all"
       ]
     }
 }
