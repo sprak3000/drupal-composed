@@ -26,4 +26,4 @@ $ DRUPAL_ROOT='/path/to/your/site/public/' DB_URL_DRUPAL='mysql://dbusername:dbp
 ```
 
 Once it has finished, you can setup a virtual host pointing to `/path/to/your/site/public`. Part of the installation output
-will be a line with your Drupal administration credentials. `Installation complete.  User name: admin  User password: randomstringhere`.
+will be a line with your Drupal administration credentials: `Installation complete.  User name: admin  User password: randomstringhere`.
