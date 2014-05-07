@@ -429,7 +429,7 @@
             "7.2.4": {
                 "name": "sprak3000-drupal/jquery_update",
                 "version": "7.2.4",
-                "version_normalized": "7.2.4",
+                "version_normalized": "7.2.4.0",
                 "dist": {
                     "type": "tar",
                     "url": "http://ftp.drupal.org/files/projects/jquery_update-7.x-2.4.tar.gz",
