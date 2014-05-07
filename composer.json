@@ -65,9 +65,9 @@
           "drush --yes --root=$DRUPAL_ROOT variable-set theme_default bootstrap",
           "drush --yes --root=$DRUPAL_ROOT pm-disable overlay",
           "drush --yes --root=$DRUPAL_ROOT language-add fr",
-          "drush --yes --root=$DRUPAL_ROOT language-enable fr",
           "drush --yes --root=$DRUPAL_ROOT language-add de",
-          "drush --yes --root=$DRUPAL_ROOT language-enable de"
+          "drush --yes --root=$DRUPAL_ROOT --format='json' variable-set language_negotiation_language '{\"locale-url\":{\"callbacks\":{\"language\":\"locale_language_from_url\",\"switcher\":\"locale_language_switcher_url\",\"url_rewrite\":\"locale_language_url_rewrite_url\"},\"file\":\"includes\/locale.inc\"},\"locale-browser\":{\"callbacks\":{\"language\":\"locale_language_from_browser\"},\"file\":\"includes\/locale.inc\",\"cache\":0},\"language-default\":{\"callbacks\":{\"language\":\"language_from_default\"}}}'",
+          "drush --yes --root=$DRUPAL_ROOT --format='string' variable-set locale_language_negotiation_url_part '0'"
       ],
       "post-update-cmd" : [
           "drush --yes --root=$DRUPAL_ROOT updatedb",
