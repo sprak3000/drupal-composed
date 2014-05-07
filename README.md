@@ -36,7 +36,7 @@ $ DRUPAL_ROOT='/path/to/your/site/public/' composer update
 ```
 
 ## Sample Apache virtual host configuration
-```
+```ApacheConf
 <VirtualHost *:80>
   ServerName www.example.com
 
