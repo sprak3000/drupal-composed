@@ -5,14 +5,15 @@ and at home. Increasingly, Drupal has become a dependency for the sites being wo
 modern tools like Composer, the sad reality is most of us will still need to use D7 until D8 has been officially
 released and allowed to mature.
 
-Enter "Drupal Composed", my effort to create a Composer project that will install Drupal 7 with one easy command. Bundled
-with this is my [Linguo](http://simpsons.wikia.com/wiki/Linguo) installation profile. This will install the standard Drupal
-components, enable French and German translations, use a [Bootstrap](http://getbootstrap.com/) theme, and enable the set of modules I have found useful for building robust
-multi-lingual sites.
+Enter "Drupal Composed", my effort to create a Composer project that will install Drupal 7 with one easy command. This
+package will install my [Linguo](http://simpsons.wikia.com/wiki/Linguo) installation profile, enable French and German
+translations, and use a [Bootstrap](http://getbootstrap.com/) theme for the site. My Linguo installation profile includes
+all the modules I have found useful in buildling a robust multi-lingual site.
 
 ## Requirements
 This project requires [Composer](http://getcomposer.org) and [drush](https://github.com/drush-ops/drush) to be globally
-installed on your server.
+installed on your server. You will also need the [drush language commands](https://drupal.org/project/drush_language)
+installed.
 
 ## Usage
 
