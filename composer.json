@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "sprak3000/drupal": "7.23.x-dev",
+        "sprak3000/drupal": "7.28.x-dev",
         "drupal/date": "7.2.7",
         "drupal/token": "7.1.5",
         "drupal/views": "7.3.7",
