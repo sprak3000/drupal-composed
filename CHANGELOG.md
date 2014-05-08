@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.5.1
+-----
+* Update to Drupal 7.28
+
 0.5.0
 -----
 * Moving post deploy steps from composer and into the Linguo installation profile
