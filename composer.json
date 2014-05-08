@@ -6,19 +6,15 @@
         },
         {
             "type": "composer",
-            "url": "http://drugist.espend.de"
-        },
-        {
-            "type": "composer",
             "packagist": "false",
             "url": "https://raw.githubusercontent.com/sprak3000/drupal-composed/master/packages.json"
         }
     ],
     "require": {
         "sprak3000/drupal": "7.28.x-dev",
-        "drupal/date": "7.2.7",
-        "drupal/token": "7.1.5",
-        "drupal/views": "7.3.7",
+        "sprak3000-drupal/date": "7.2.7",
+        "sprak3000-drupal/token": "7.1.5",
+        "sprak3000-drupal/views": "7.3.7",
         "sprak3000-drupal/ctools": "7.1.4",
         "sprak3000-drupal/devel": "7.1.5",
         "sprak3000-drupal/entity": "7.1.5",

@@ -442,6 +442,57 @@
                 "type": "drupal-module"
             }
         },
+        "sprak3000-drupal/date": {
+            "7.2.7": {
+                "name": "sprak3000-drupal/date",
+                "version": "7.2.7",
+                "version_normalized": "7.2.7.0",
+                "dist": {
+                    "type": "tar",
+                    "url": "http://ftp.drupal.org/files/projects/date-7.x-2.7.tar.gz",
+                    "reference": "24e11f82623a442305c30cb6887d77f9",
+                    "shasum": null
+                },
+                "require": {
+                    "composer/installers": "*"
+                },
+                "type": "drupal-module"
+            }
+        },
+        "sprak3000-drupal/token": {
+            "7.1.5": {
+                "name": "sprak3000-drupal/token",
+                "version": "7.1.5",
+                "version_normalized": "7.1.5.0",
+                "dist": {
+                    "type": "tar",
+                    "url": "http://ftp.drupal.org/files/projects/token-7.x-1.5.tar.gz",
+                    "reference": "93e5a19e8b244022cc38e58663db8001",
+                    "shasum": null
+                },
+                "require": {
+                    "composer/installers": "*"
+                },
+                "type": "drupal-module"
+            }
+        },
+        "sprak3000-drupal/views": {
+            "7.3.7": {
+                "name": "sprak3000-drupal/views",
+                "version": "7.3.7",
+                "version_normalized": "7.3.7.0",
+                "dist": {
+                    "type": "tar",
+                    "url": "http://ftp.drupal.org/files/projects/views-7.x-3.7.tar.gz",
+                    "reference": "3f36f0d13f3b724d719f6729cbc110ba",
+                    "shasum": null
+                },
+                "require": {
+                    "composer/installers": "*"
+                },
+                "type": "drupal-module"
+            }
+        },
         "sprak3000-drupal/rubiktheme": {
             "7.4.0": {
                 "name": "sprak3000-drupal/rubiktheme",
