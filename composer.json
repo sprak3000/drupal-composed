@@ -53,7 +53,7 @@
     },
     "scripts" : {
       "post-install-cmd" : [
-          "drush --yes --root=$DRUPAL_ROOT site-install linguo --db-url=$DB_URL_DRUPAL | grep -v 'sendmail: not found|Error sending e-mail|Unable to send e-mail'",
+          "drush --yes --root=$DRUPAL_ROOT site-install linguo --db-url=$DB_URL_DRUPAL",
           "echo 'Setting file upload directory permissions ...'; chmod -R ug+w public/sites/default/files"
       ],
       "post-update-cmd" : [
