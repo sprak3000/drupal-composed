@@ -3,9 +3,89 @@
  * Implement hook_install().
  *
  * Perform actions to set up the site for this profile.
+ *
+ * @see https://api.drupal.org/api/drupal/modules!system!system.api.php/function/hook_install/7
  */
 function linguo_install()
 {
   include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
   standard_install();
+
+  // Set the admin theme to Rubik and the site theme to Bootstrap theme
+  $themes = array ();
+  $themes['admin_theme'] = 'rubik';
+  $themes['theme_default'] = 'bootstrap';
+
+  theme_enable($themes);
+  variable_set('admin_theme', $themes['admin_theme']);
+  variable_set('theme_default', $themes['theme_default']);
+
+  // Disable any unnecessary modules
+  $disable_modules = array ();
+  $disable_modules[] = 'overlay';
+
+  module_disable($disable_modules);
+
+  // Configure the jquery_update module
+  variable_set('jquery_update_jquery_version', '1.10');
+
+  // Set default country
+  variable_set('site_default_country', 'US');
+
+  // Enable content localization for French and German
+  variable_set('i18n_hide_translation_links', '1');
+  variable_set('language_content_type_article', '2');
+  variable_set('language_content_type_page', '2');
+  locale_add_language('fr');
+  locale_add_language('de');
+
+  // Use URL as language detection and force prefix onto URL for all languages
+  $language_negotiation = array ();
+  $language_negotiation['locale-url'] = array ();
+  $language_negotiation['locale-url']['callbacks'] = array ();
+  $language_negotiation['locale-url']['callbacks']['language'] = 'locale_language_from_url';
+  $language_negotiation['locale-url']['callbacks']['switcher'] = 'locale_language_switcher_url';
+  $language_negotiation['locale-url']['callbacks']['url_rewrite'] = 'locale_language_url_rewrite_url';
+  $language_negotiation['locale-url']['file'] = 'includes/locale.inc';
+
+  $language_negotiation['locale-browser'] = array ();
+  $language_negotiation['locale-browser']['callbacks'] = array ();
+  $language_negotiation['locale-browser']['callbacks']['language'] = 'locale_language_from_browser';
+  $language_negotiation['locale-browser']['file'] = 'includes/locale.inc';
+  $language_negotiation['locale-browser']['cache'] = 0;
+
+  $language_negotiation['language-default'] = array ();
+  $language_negotiation['language-default']['callbacks'] = array ();
+  $language_negotiation['language-default']['callbacks']['language'] = 'language_from_default';
+
+  variable_set('language_negotiation_language', $language_negotiation);
+  variable_set('locale_language_negotiation_url_part', '0');
+  db_update('languages')->fields(array('prefix' => 'en'))->condition('language', 'en', '=')->execute();
+}
+
+/**
+ * Implements hook_install_tasks().
+ * @see https://api.drupal.org/api/drupal/modules!system!system.api.php/function/hook_install_tasks/7
+ */
+function linguo_install_tasks($pInstallState)
+{
+  $tasks = array ();
+
+  // Set the timezone
+  $tasks['linguo_set_timezone'] = array ();
+  $tasks['linguo_set_timezone']['display_name'] = st('Set Default Timezone to America/New_York');
+  $tasks['linguo_set_timezone']['display'] = false;
+  $tasks['linguo_set_timezone']['type'] = 'normal';
+  $tasks['linguo_set_timezone']['run'] = INSTALL_TASK_RUN_IF_NOT_COMPLETED;
+  $tasks['linguo_set_timezone']['function'] = 'linguo_set_default_timezone';
+
+  return $tasks;
+}
+
+/**
+ * Helper function to set the default timezone
+ */
+function linguo_set_default_timezone()
+{
+  variable_set('date_default_timezone', 'America/New_York');
 }
