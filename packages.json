@@ -494,10 +494,10 @@
             }
         },
         "sprak3000-drupal/bueditor": {
-            "7.1.x-dev": {
+            "7.1.0-dev": {
                 "name": "sprak3000-drupal/bueditor",
-                "version": "7.1.x-dev",
-                "version_normalized": "7.1.x.0-dev",
+                "version": "7.1.0-dev",
+                "version_normalized": "7.1.0.0-dev",
                 "dist": {
                     "type": "tar",
                     "url": "http://ftp.drupal.org/files/projects/bueditor-7.x-1.x-dev.tar.gz",
