@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.5.0
+-----
+* Moving post deploy steps from composer and into the Linguo installation profile
+
 0.4.4
 -----
 * Updating default language settings to force URLs to have language prefix, e.g., /en/foo, /fr/foo, etc.
