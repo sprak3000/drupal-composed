@@ -36,6 +36,9 @@ function linguo_install()
   variable_set('i18n_hide_translation_links', '1');
   variable_set('language_content_type_article', '2');
   variable_set('language_content_type_page', '2');
+
+  db_update('taxonomy_vocabulary')->fields(array('i18n_mode' => 1))->condition('vid', 1, '=')->execute();
+
   locale_add_language('fr');
   locale_add_language('de');
 
@@ -61,6 +64,112 @@ function linguo_install()
   variable_set('language_negotiation_language', $language_negotiation);
   variable_set('locale_language_negotiation_url_part', '0');
   db_update('languages')->fields(array('prefix' => 'en'))->condition('language', 'en', '=')->execute();
+
+  // Enable markdown support in the editor
+  $bueditor_roles = array ();
+  $bueditor_roles[3] = array();
+  $bueditor_roles[3]['editor'] = '5';
+  $bueditor_roles[3]['alt'] = '0';
+  $bueditor_roles[2] = array();
+  $bueditor_roles[2]['editor'] = '5';
+  $bueditor_roles[2]['alt'] = '0';
+  $bueditor_roles[2]['weight'] = 11;
+  $bueditor_roles[1] = array();
+  $bueditor_roles[1]['editor'] = '5';
+  $bueditor_roles[1]['alt'] = '0';
+  $bueditor_roles[1]['weight'] = 12;
+
+  variable_set('bueditor_roles', $bueditor_roles);
+  variable_set('bueditor_user1', '5');
+  variable_set('bueditor_user1_alt', '0');
+
+  $filter_format_fields = array ();
+  $filter_format_fields['format'] = 'markdown';
+  $filter_format_fields['name'] = 'Markdown';
+  $filter_format_fields['cache'] = 1;
+  $filter_format_fields['status'] = 1;
+  $filter_format_fields['weight'] = 0;
+
+  db_insert('filter_format')->fields($filter_format_fields)->execute();
+
+  $filter_fields = array ();
+  $filter_fields['format'] = 'markdown';
+  $filter_fields['module'] = 'filter';
+  $filter_fields['name'] = 'filter_autop';
+  $filter_fields['weight'] = -47;
+  $filter_fields['status'] = 0;
+  $filter_fields['settings'] = 'a:0:{}';
+
+  db_insert('filter')->fields($filter_fields)->execute();
+
+  $filter_fields['format'] = 'markdown';
+  $filter_fields['module'] = 'filter';
+  $filter_fields['name'] = 'filter_html';
+  $filter_fields['weight'] = -50;
+  $filter_fields['status'] = 0;
+  $filter_fields['settings'] = 'a:3:{s:12:"allowed_html";s:0:"";s:16:"filter_html_help";i:0;s:20:"filter_html_nofollow";i:0;}';
+
+  db_insert('filter')->fields($filter_fields)->execute();
+
+  $filter_fields['format'] = 'markdown';
+  $filter_fields['module'] = 'filter';
+  $filter_fields['name'] = 'filter_htmlcorrector';
+  $filter_fields['weight'] = -44;
+  $filter_fields['status'] = 0;
+  $filter_fields['settings'] = 'a:0:{}';
+
+  db_insert('filter')->fields($filter_fields)->execute();
+
+  $filter_fields['format'] = 'markdown';
+  $filter_fields['module'] = 'filter';
+  $filter_fields['name'] = 'filter_html_escape';
+  $filter_fields['weight'] = -48;
+  $filter_fields['status'] = 0;
+  $filter_fields['settings'] = 'a:0:{}';
+
+  db_insert('filter')->fields($filter_fields)->execute();
+
+  $filter_fields['format'] = 'markdown';
+  $filter_fields['module'] = 'markdown';
+  $filter_fields['name'] = 'filter_markdown';
+  $filter_fields['weight'] = -49;
+  $filter_fields['status'] = 1;
+  $filter_fields['settings'] = 'a:0:{}';
+
+  db_insert('filter')->fields($filter_fields)->execute();
+
+  $filter_fields['format'] = 'markdown';
+  $filter_fields['module'] = 'filter';
+  $filter_fields['name'] = 'filter_url';
+  $filter_fields['weight'] = -46;
+  $filter_fields['status'] = 0;
+  $filter_fields['settings'] = 'a:1:{s:17:"filter_url_length";s:2:"72";}';
+
+  db_insert('filter')->fields($filter_fields)->execute();
+
+  $filter_fields['format'] = 'markdown';
+  $filter_fields['module'] = 'media';
+  $filter_fields['name'] = 'media_filter';
+  $filter_fields['weight'] = -45;
+  $filter_fields['status'] = 1;
+  $filter_fields['settings'] = 'a:0:{}';
+
+  db_insert('filter')->fields($filter_fields)->execute();
+
+  $role_permission_fields = array ();
+  $role_permission_fields['rid'] = 1;
+  $role_permission_fields['permission'] = 'use text format markdown';
+  $role_permission_fields['module'] = 'filter';
+
+  db_insert('role_permission')->fields($role_permission_fields)->execute();
+
+  $role_permission_fields['rid'] = 2;
+
+  db_insert('role_permission')->fields($role_permission_fields)->execute();
+
+  $role_permission_fields['rid'] = 3;
+
+  db_insert('role_permission')->fields($role_permission_fields)->execute();
 }
 
 /**

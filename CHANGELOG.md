@@ -3,7 +3,8 @@ CHANGELOG
 
 0.5.2
 -----
-Adding bueditor and markdown text support
+* Adding bueditor and markdown text support
+* Updating Tags vocabulary to allow translation
 
 0.5.1
 -----
