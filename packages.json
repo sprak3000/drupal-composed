@@ -493,6 +493,57 @@
                 "type": "drupal-module"
             }
         },
+        "sprak3000-drupal/bueditor": {
+            "7.1.7": {
+                "name": "sprak3000-drupal/bueditor",
+                "version": "7.1.7",
+                "version_normalized": "7.1.7.0",
+                "dist": {
+                    "type": "tar",
+                    "url": "http://ftp.drupal.org/files/projects/bueditor-7.x-1.7.tar.gz",
+                    "reference": "f892328f02c3d9c7baaf2f1a433a9199",
+                    "shasum": null
+                },
+                "require": {
+                    "composer/installers": "*"
+                },
+                "type": "drupal-module"
+            }
+        },
+        "sprak3000-drupal/markdowneditor": {
+            "7.1.2": {
+                "name": "sprak3000-drupal/markdowneditor",
+                "version": "7.1.2",
+                "version_normalized": "7.1.2.0",
+                "dist": {
+                    "type": "tar",
+                    "url": "http://ftp.drupal.org/files/projects/markdowneditor-7.x-1.2.tar.gz",
+                    "reference": "1a02178d52948c7b47d8615058acc0ef",
+                    "shasum": null
+                },
+                "require": {
+                    "composer/installers": "*"
+                },
+                "type": "drupal-module"
+            }
+        },
+        "sprak3000-drupal/markdown": {
+            "7.1.2": {
+                "name": "sprak3000-drupal/markdown",
+                "version": "7.1.2",
+                "version_normalized": "7.1.2.0",
+                "dist": {
+                    "type": "tar",
+                    "url": "http://ftp.drupal.org/files/projects/markdown-7.x-1.2.tar.gz",
+                    "reference": "fffd49dbfa08ae42e7f5e74a4b1b3bd9",
+                    "shasum": null
+                },
+                "require": {
+                    "composer/installers": "*"
+                },
+                "type": "drupal-module"
+            }
+        },
         "sprak3000-drupal/rubiktheme": {
             "7.4.0": {
                 "name": "sprak3000-drupal/rubiktheme",
