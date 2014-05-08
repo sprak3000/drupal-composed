@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.5.2
+-----
+Adding bueditor and markdown text support
+
 0.5.1
 -----
 * Update to Drupal 7.28
