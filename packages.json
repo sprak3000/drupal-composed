@@ -559,6 +559,23 @@
                 "type": "drupal-module"
             }
         },
+        "sprak3000-drupal/views_rss": {
+            "7.2.0-rc3": {
+                "name": "sprak3000-drupal/views_rss",
+                "version": "7.2.0-rc3",
+                "version_normalized": "7.2.0.0-rc3",
+                "dist": {
+                    "type": "tar",
+                    "url": "http://ftp.drupal.org/files/projects/views_rss-7.x-2.0-rc3.tar.gz",
+                    "reference": "cfe6c2f78ebcb4033ace4855486fd948",
+                    "shasum": null
+                },
+                "require": {
+                    "composer/installers": "*"
+                },
+                "type": "drupal-module"
+            }
+        },
         "sprak3000-drupal/rubiktheme": {
             "7.4.0": {
                 "name": "sprak3000-drupal/rubiktheme",
