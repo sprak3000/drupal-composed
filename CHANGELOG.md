@@ -1,5 +1,8 @@
 CHANGELOG
 =========
+0.6.0
+-----
+* Adding views RSS module
 
 0.5.2
 -----
