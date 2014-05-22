@@ -1,5 +1,10 @@
 CHANGELOG
 =========
+
+1.0.0
+-----
+* Cutting an official release
+
 0.6.0
 -----
 * Adding views RSS module
