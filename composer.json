@@ -50,6 +50,9 @@
         "sprak3000-drupal/bootstraptheme": "7.3.0"
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        },
         "installer-paths": {
             "public/sites/all/modules/{$name}/": ["type:drupal-module"],
             "public/sites/all/themes/{$name}/": ["type:drupal-theme"]
@@ -57,7 +60,7 @@
     },
     "scripts" : {
       "post-install-cmd" : [
-          "drush --yes --root=$DRUPAL_ROOT site-install linguo --db-url=$DB_URL_DRUPAL",
+          "drush --yes --root=$DRUPAL_ROOT site-install linguo --db-url=$DB_URL_DRUPAL | grep -v 'sendmail: not found|Error sending e-mail|Unable to send e-mail'",
           "echo 'Setting file upload directory permissions ...'; chmod -R ug+w public/sites/default/files"
       ],
       "post-update-cmd" : [
