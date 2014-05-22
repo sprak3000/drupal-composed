@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+1.0.1
+-----
+* Updating composer.json to have metadata for packagist
+
 1.0.0
 -----
 * Cutting an official release
