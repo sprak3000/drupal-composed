@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+1.1.0
+-----
+Moving packages.json to its own repo to allow packgist information to be versioned independently of this project.
+
 1.0.1
 -----
 * Updating composer.json to have metadata for packagist

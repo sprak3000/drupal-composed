@@ -21,7 +21,7 @@
         {
             "type": "composer",
             "packagist": "false",
-            "url": "https://raw.githubusercontent.com/sprak3000/drupal-composed/master/packages.json"
+            "url": "https://raw.githubusercontent.com/sprak3000/drupal-packagist/master/packages-7.x.json"
         }
     ],
     "require": {
