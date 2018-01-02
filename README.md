@@ -1,4 +1,7 @@
 # Drupal Composed
+
+***This repository has been archived and left as reference material. It is no longer maintained.***
+
 I have been developing [Drupal 7](http://drupal.org) sites, modules, and themes for a few years now at work.
 I have also been using [Composer](http://getcomposer.org) at work to manage dependencies for non-Drupal projects at work
 and at home. Increasingly, Drupal has become a dependency for the sites being worked upon. While Drupal 8 is wedded to
